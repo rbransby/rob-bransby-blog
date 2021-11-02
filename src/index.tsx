@@ -3,10 +3,38 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import "fontsource-cascadia-code";
+import { createTheme } from '@mui/material';
+import { ThemeProvider, typography } from '@mui/system';
+
+const theme = createTheme({
+  palette:{
+    primary:
+    {
+      main:'#A0E5FF',
+      light:'#E2E2AC',
+      dark:'#4499CE',
+      contrastText:'#C586C0'
+    },
+    background: {
+      paper: '#120024'
+    },
+    text: {
+      primary:'#A0E5FF',
+      secondary:'#D69B75'
+    }    
+  },
+  typography: {
+    fontFamily: '"Cascadia Code", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen","Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",sans-serif'    
+  },
+  
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
